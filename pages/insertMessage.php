@@ -1,3 +1,16 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        require '../database/db.php';
+        $message = $_POST['message'];
+
+        // Enter the record
+        insertMessage($message);
+
+        // Redirect
+        header('location: viewMessages.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
